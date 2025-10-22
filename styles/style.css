@@ -82,7 +82,6 @@
   opacity: 0.5;
   mix-blend-mode: hard-light;
   font-family: var(--font-secondary), sans-serif;
-  font-size: 14px;
   color: var(--svg-color);
   text-shadow: -1px -1px 0 var(--shadow-color),
     /* левый верхний */ 1px -1px 0 var(--shadow-color),
@@ -193,9 +192,6 @@ button {
   mix-blend-mode: difference;
 }
 
-.card__icon-button {
-  border: none;
-}
 
 .card__like-button {
   min-inline-size: 130px;
