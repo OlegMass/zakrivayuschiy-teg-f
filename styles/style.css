@@ -28,7 +28,7 @@
   gap: 35px;
   flex-direction: column;
   min-block-size: 327px;
-  border: 2px solid rgba(0, 0, 0, 1);
+  border: 2px solid var(--border-color);
   align-items: center;
   justify-content: center;
   justify-self: center;
@@ -52,7 +52,6 @@
 }
 
 .header__title {
-  /* margin-top: 20px; */
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
@@ -72,7 +71,7 @@
 
   background-color: var(--background-color);
   justify-self: center;
-  outline: 2px solid rgba(0, 0, 0, 1);
+  outline: 2px solid var(--border-color);
 }
 
 .card__logo {
@@ -84,7 +83,7 @@
   mix-blend-mode: hard-light;
   font-family: var(--font-secondary), sans-serif;
   font-size: 14px;
-  color: rgba(0, 0, 0, 1);
+  color: var(--svg-color);
   text-shadow: -1px -1px 0 var(--shadow-color),
     /* левый верхний */ 1px -1px 0 var(--shadow-color),
     /* правый верхний */ -1px 1px 0 var(--shadow-color),
@@ -115,7 +114,7 @@
   font-family: var(--font-main);
   padding: 5px 24px 4px 10px;
   border-block-end: none;
-  outline: 2px solid rgba(0, 0, 0, 1);
+  outline: 2px solid var(--border-color);
 }
 
 .card__images {
@@ -123,7 +122,7 @@
   width: 100%;
   aspect-ratio: 1/1;
   overflow: hidden;
-  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 1);
+  box-shadow: 0 2px 0 0 var(--border-color);
 }
 
 .card__image {
@@ -131,7 +130,6 @@
   aspect-ratio: 1/1;
   object-fit: cover;
   object-position: right;
-  /* border-bottom: 2px solid rgba(0, 0, 0, 1); */
 }
 
 .card__picture-grayscale {
@@ -163,7 +161,7 @@
 }
 
 .card__description {
-  padding: 26px 27px 25px;
+  padding: 26px 28px 25px;
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -176,12 +174,11 @@
 .card__group-buttons {
   display: flex;
   justify-content: end;
-  gap: 12px;
-  padding: 0 26px 25px;
+  gap: 5px;
+  padding: 0 26px 20px;
 }
 
 button {
-  /* position: relative; */
   background-color: transparent;
   border: 2px solid var(--border-color);
   cursor: pointer;
@@ -192,19 +189,9 @@ button {
   font-family: var(--font-secondary), sans-serif;
   font-size: 14px;
   line-height: 90%;
-  color: rgba(0, 0, 0, 1);
-  /* color: var(--color-blend, rgba(255, 255, 255, 1));
-  mix-blend-mode: difference; */
+  color: var(--text-color-white);
+  mix-blend-mode: difference;
 }
-
-/* .footer__dialog__button__text {
-  font-family: var(--font-secondary), sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 90%;
-  letter-spacing: 0%;
-  text-transform: uppercase;
-} */
 
 .card__icon-button {
   border: none;
@@ -212,8 +199,8 @@ button {
 
 .card__like-button {
   min-inline-size: 130px;
-  width: 130;
-  height: 38;
+  width: 130px;
+  height: 38px;
   opacity: 1;
   gap: 10px;
   border-width: 2px;
@@ -223,9 +210,32 @@ button {
   padding-left: 13px;
 }
 
+.button-shadow {
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
 .button-shadow:focus {
   outline: none;
   box-shadow: 2px 2px 0 var(--border-color);
+}
+
+.button-paint::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--button-paint-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.button-paint:hover::before {
+  transform: scaleX(1);
 }
 
 .footer {
@@ -250,14 +260,14 @@ button {
   height: 28px;
   align-self: center;
   justify-self: center;
-  color: var(--color-main, rgba(0, 0, 0, 1));
+  color: var(--svg-color);
+  filter: invert(0);
+  transition: filter 0.3s ease;
 }
 
-/* .dialog__svg {
-  width: 39px;
-  height: 39px;
-  color: var(--color-main, rgba(0, 0, 0, 1));
-} */
+.button-paint:hover .footer__svg {
+  filter: invert(1);
+}
 
 .dialog {
   justify-self: center;
@@ -267,7 +277,6 @@ button {
   padding: 30px;
   margin-top: 0px;
   font-family: var(--font-secondary), sans-serif;
-  color: var(--color-main, rgba(0, 0, 0, 1));
   text-transform: uppercase;
   border: 2px solid var(--border-color);
 }
@@ -308,14 +317,86 @@ button {
   margin-left: 7px;
 }
 
-/* body:has(.footer__dialog[open]) .footer{
-  padding-top: 29px;
-} */
-
 body:has(.footer__dialog[open])
   .main__list__item:last-child
   .card__description {
   padding-bottom: 2px;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.card__icon-button {
+  border: 2px solid transparent;
+  padding: 0;
+  transition: border 0.3s ease;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: none;
+  border: 2px solid var(--border-color);
+}
+
+.like-icon {
+  overflow: visible;
+  inline-size: 39px;
+}
+
+.main-body,
+.core {
+  fill: none;
+}
+
+.like-icon .contour {
+  transition: fill 0.1s linear;
+}
+
+.like-icon .core {
+  transition: fill 0.3s linear 0.03s;
+}
+
+.like-icon .main-body {
+  transition: fill 0.3s linear 0;
+}
+
+.like-icon:hover .core {
+  fill: var(--color-heart-hover);
+  transition: fill 0.3s linear 0;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--color-heart-hover);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon:active .core {
+  fill: var(--color-heart-liked);
+  transition: fill 0.3s linear 0;
+}
+
+.like-icon:active .main-body {
+  fill: var(--color-heart-liked);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--color-heart-liked);
+  transition: fill 0.3s linear 0;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--color-heart-liked);
+  transition: fill 0.3s linear 0.05;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--color-heart-liked);
+  transition: fill 0.3s linear 0.06;
 }
 
 @media (width >=1440px) {
@@ -325,7 +406,7 @@ body:has(.footer__dialog[open])
   }
 
   .footer__button {
-    block-size: 55px;
+    block-size: 52px;
     grid-template-columns: min-content 1fr;
     justify-content: space-around;
   }
@@ -347,16 +428,8 @@ body:has(.footer__dialog[open])
     margin-top: 20px;
   }
 
-  .footer__dialog {
-    justify-self: center;
-    align-self: center;
+  .dialog {
     max-inline-size: 353px;
-    min-block-size: 191px;
-    padding: 30px;
     margin-top: 55px;
-    font-family: var(--font-secondary), sans-serif;
-    color: var(--color-main, rgba(0, 0, 0, 1));
-    text-transform: uppercase;
-    border: 2px solid var(--border-color);
   }
 }
