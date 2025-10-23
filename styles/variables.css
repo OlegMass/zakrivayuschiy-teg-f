@@ -11,14 +11,16 @@
     ),
     repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
     linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
-    --rubber-inline-size: clamp(375px, 50vw, 700px);
-    --background-color: rgba(255, 255, 255, 1);
-    --shadow-color: rgba(255, 255, 255, 1);
-    --border-color: rgba(0, 0, 0, 1);
-    --button-paint-color: rgba(0, 0, 0, 1);
-    --text-color-white: rgba(255, 255, 255, 1);
-    --svg-color: rgba(0, 0, 0, 1);
-    --contour-color: #000;
-    --color-heart-hover: rgba(0, 0, 0, 1);
-    --color-heart-liked: rgba(255, 0, 0, 1);
+  --rubber-inline-size: clamp(375px, 50vw, 700px);
+  --background-color: rgba(255, 255, 255, 1);
+  --shadow-color: rgba(255, 255, 255, 1);
+  --border-color: rgba(0, 0, 0, 1);
+  --button-paint-color: rgba(0, 0, 0, 1);
+  --text-color-white: rgba(255, 255, 255, 1);
+  --svg-color: rgba(0, 0, 0, 1);
+  --contour-color: #000;
+  --color-heart-hover: rgba(0, 0, 0, 1);
+  --color-heart-liked: rgba(255, 0, 0, 1);
+  --accent-color: rgba(0, 0, 0, 1);
+  --color-blend: rgba(255, 255, 255, 1);
 }

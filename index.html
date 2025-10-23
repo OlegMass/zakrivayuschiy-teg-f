@@ -655,37 +655,40 @@
           </article>
         </li>
       </ul>
-    </main>
-    <footer class="footer">
-      <button
-        class="button footer__button button-shadow button-paint"
-        type="button"
-        onclick="window['footer__dialog-id'].showModal();"
-        aria-controls="footer__dialog-id"
-      >
-        <svg class="footer__svg floppy" viewBox="0 0 40 40">
-          <use href="./svg/floppy.svg#floppy"></use>
-        </svg>
-
-        <span class="button__text">Сохранить на память</span>
-      </button>
-      <dialog id="footer__dialog-id" class="dialog">
-        <div class="dialog__content">
-          <svg class="dialog__svg floppy" viewBox="0 0 40 40">
-            <use href="./svg/floppy.svg#floppy"></use>
+      <section class="section button-section">
+        <button
+          class="button button-section__button button-shadow button-paint"
+          type="button"
+          onclick="window['button-section__dialog-id'].showModal();"
+          aria-controls="button-section__dialog-id"
+        >
+          <svg class="floppy" viewBox="0 0 40 40" width="28" height="28">
+            <path
+              fill="currentColor"
+              d="M.5.5h3v3h-3zM.5 3.5h3v3h-3zM.5 6.5h3v3h-3zM.5 9.5h3v3h-3zM.5 12.5h3v3h-3zM.5 15.5h3v3h-3zM.5 18.5h3v3h-3zM.5 21.5h3v3h-3zM.5 24.5h3v3h-3zM.5 27.5h3v3h-3zM.5 30.5h3v3h-3zM.5 33.5h3v3h-3zM.5 36.5h3v3h-3zM33.5.5v3h-3v-3zM30.5.5v3h-3v-3zM27.5.5v3h-3v-3zM24.5.5v3h-3v-3zM21.5.5v3h-3v-3zM18.5.5v3h-3v-3zM15.5.5v3h-3v-3zM12.5.5v3h-3v-3zM9.5.5v3h-3v-3zM6.5.5v3h-3v-3zM36.5 3.5v3h-3v-3zM9.5 6.5v3h-3v-3zM9.5 3.5v3h-3v-3zM9.5 9.5v3h-3v-3zM30.5 6.5v3h-3v-3zM30.5 3.5v3h-3v-3zM30.5 9.5v3h-3v-3zM24.5 6.5v3h-3v-3zM24.5 3.5v3h-3v-3zM24.5 9.5v3h-3v-3zM30.5 12.5v3h-3v-3zM27.5 12.5v3h-3v-3zM24.5 12.5v3h-3v-3zM21.5 12.5v3h-3v-3zM18.5 12.5v3h-3v-3zM15.5 12.5v3h-3v-3zM12.5 12.5v3h-3v-3zM9.5 12.5v3h-3v-3zM33.5 21.5v3h-3v-3zM30.5 21.5v3h-3v-3zM27.5 21.5v3h-3v-3zM24.5 21.5v3h-3v-3zM21.5 21.5v3h-3v-3zM18.5 21.5v3h-3v-3zM15.5 21.5v3h-3v-3zM12.5 21.5v3h-3v-3zM9.5 21.5v3h-3v-3zM33.5 24.5v3h-3v-3zM9.5 24.5v3h-3v-3zM33.5 27.5v3h-3v-3zM9.5 27.5v3h-3v-3zM33.5 30.5v3h-3v-3zM9.5 30.5v3h-3v-3zM9.5 33.5v3h-3v-3zM33.5 33.5v3h-3v-3zM36.5 36.5v3h-3v-3zM33.5 36.5v3h-3v-3zM30.5 36.5v3h-3v-3zM27.5 36.5v3h-3v-3zM24.5 36.5v3h-3v-3zM21.5 36.5v3h-3v-3zM18.5 36.5v3h-3v-3zM15.5 36.5v3h-3v-3zM12.5 36.5v3h-3v-3zM9.5 36.5v3h-3v-3zM6.5 36.5v3h-3v-3zM39.5 39.5h-3v-3h3zM39.5 36.5h-3v-3h3zM39.5 33.5h-3v-3h3zM39.5 30.5h-3v-3h3zM39.5 27.5h-3v-3h3zM39.5 24.5h-3v-3h3zM39.5 21.5h-3v-3h3zM39.5 18.5h-3v-3h3zM39.5 15.5h-3v-3h3zM39.5 12.5h-3v-3h3zM39.5 9.5h-3v-3h3z"
+            />
           </svg>
-          <p class="dialog__text">Вставьте дискету, чтобы продолжить</p>
-        </div>
-        <form method="dialog" class="dialog__form">
-          <button
-            class="dialog__button button-shadow button button-paint"
-            type="submit"
-          >
-            <span class="button__text">ок</span>
-          </button>
-        </form>
-      </dialog>
-    </footer>
+
+          <span class="button__text">Сохранить на память</span>
+        </button>
+        <dialog id="button-section__dialog-id" class="dialog">
+          <div class="dialog__content">
+            <svg class="dialog__svg" viewBox="0 0 40 40">
+              <use href="./svg/floppy.svg#floppy"></use>
+            </svg>
+            <p class="dialog__text">Вставьте дискету, чтобы продолжить</p>
+          </div>
+          <form method="dialog" class="dialog__form">
+            <button
+              class="dialog__button button-shadow button button-paint"
+              type="submit"
+            >
+              <span class="button__text">OK</span>
+            </button>
+          </form>
+        </dialog>
+      </section>
+    </main>
 
     <script src="./scripts/like.js"></script>
   </body>
